@@ -13,7 +13,7 @@ void add(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 
-    (*stack)->next->n += (*stack)->n;
-    pop(stack, line_number); // Remove the top element
+    (*stack)->next->data += (*stack)->data;
+    nop(stack, line_number);
 }
 
