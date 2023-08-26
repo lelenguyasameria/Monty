@@ -8,7 +8,7 @@ void pall(stack_element **stack, unsigned int line_number)
 {
     (void) line_number;
 
-    stack_element *current = *stack;
+    stack_t *current = *stack;
     while (current)
     {
         printf("%d\n", current->data);

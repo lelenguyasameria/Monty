@@ -8,28 +8,30 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdarg.h>
+
 /**
  * struct stack_s - Structure representing a doubly linked list node
- * @n: Integer data stored in the node
- * @prev: Pointer to the previous node in the list
+ * @data: Integer data stored in the node
+ * @previous: Pointer to the previous node in the list
  * @next: Pointer to the next node in the list
  *
  * Description: This structure defines a node in a doubly linked list,
  * which is used for implementing stack, queue, LIFO, and FIFO data structures.
  */
-typedef struct stack_node
+typedef struct stack_s
 {
     int data;
-    struct stack_node *previous;
-    struct stack_node *next;
-} stack_element;
+    struct stack_s *previous;
+    struct stack_s *next;
+} stack_t;
+
 /**
  * struct instruction_s - Contains an opcode and its associated function
  * @opcode: The opcode
  * @f: Pointer to the function that handles the opcode
  *
  * Description: This structure holds an opcode and the corresponding
- * function that performs the associated operation. It is used for various
+ * function that performs the associated operation. It is used for various  
  * stack, queue, LIFO, and FIFO operations.
  */
 typedef struct instruction_s
@@ -55,14 +57,13 @@ void print_stack(stack_t **, unsigned int);
 void add_to_stack(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);
 
-void call_fun(op_func, char *, char *, int, int);
+void call_fun(op_func, stack_t **, char *, int, int);
 
 void print_top(stack_t **, unsigned int);
 void pop_top(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void swap_nodes(stack_t **, unsigned int);
-
-/* Mathematical operations with nodes */
+   /* Mathematical operations with nodes */
 void add_nodes(stack_t **, unsigned int);
 void sub_nodes(stack_t **, unsigned int);
 void div_nodes(stack_t **, unsigned int);

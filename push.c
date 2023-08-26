@@ -5,7 +5,7 @@
  * @stack: Pointer to the head of the stack.
  * @line_number: Line number of the instruction.
  */
-void push(stack_element **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
     char *arg = bus.arg;
 
